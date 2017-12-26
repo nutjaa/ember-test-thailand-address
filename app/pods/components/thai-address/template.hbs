@@ -1,1 +1,9 @@
-New data
+{{#power-select-typeahead search=(action 'searchUsersAsync')
+  selected=user2
+  noMatchesMessage='Not found'
+  oninput=(action "skipShortSearches")
+  onchange=(action (mut user2))
+  extra=(hash labelPath="name")
+  as |user|}}
+  {{user.name}}
+{{/power-select-typeahead}}

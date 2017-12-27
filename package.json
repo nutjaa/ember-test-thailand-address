@@ -35,6 +35,7 @@
     "ember-cli-uglify": "^2.0.0",
     "ember-data": "~2.16.2",
     "ember-export-application-global": "^2.0.0",
+    "ember-fetch": "3.4.4",
     "ember-load-initializers": "^1.0.0",
     "ember-power-select": "2.0.0-beta.0",
     "ember-power-select-typeahead": "0.6.1",

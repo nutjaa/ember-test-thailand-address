@@ -1,9 +1,54 @@
-{{#power-select-typeahead search=(action 'searchUsersAsync')
-  selected=user2
-  noMatchesMessage='Not found'
-  oninput=(action "skipShortSearches")
-  onchange=(action (mut user2))
-  extra=(hash labelPath="name")
-  as |user|}}
-  {{user.name}}
-{{/power-select-typeahead}}
+<div class="row">
+	<div class="col-md-6">
+		<h2>ตำบล / แขวง</h2>
+		{{#power-select-typeahead search=(action 'searchUsersAsync')
+		  selected=user2
+		  noMatchesMessage='Not found'
+		  oninput=(action "skipShortSearches")
+		  onchange=(action (mut user2))
+		  extra=(hash labelPath="name")
+		  as |user|}}
+		  {{user.name}}
+		{{/power-select-typeahead}}
+	</div>
+	<div class="col-md-6">
+		<h2>อำเภอ / เขต</h2>
+		{{#power-select-typeahead search=(action 'searchUsersAsync')
+		  selected=user2
+		  noMatchesMessage='Not found'
+		  oninput=(action "skipShortSearches")
+		  onchange=(action (mut user2))
+		  extra=(hash labelPath="name")
+		  as |user|}}
+		  {{user.name}}
+		{{/power-select-typeahead}}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<h2>จังหวัด</h2>
+		{{#power-select-typeahead search=(action 'searchUsersAsync')
+		  selected=user2
+		  noMatchesMessage='Not found'
+		  oninput=(action "skipShortSearches")
+		  onchange=(action (mut user2))
+		  extra=(hash labelPath="name")
+		  as |user|}}
+		  {{user.name}}
+		{{/power-select-typeahead}}
+	</div>
+	<div class="col-md-6">
+		<h2>รหัสไปรษณีย์</h2>
+		{{#power-select-typeahead search=(action 'searchUsersAsync')
+		  selected=user2
+		  noMatchesMessage='Not found'
+		  oninput=(action "skipShortSearches")
+		  onchange=(action (mut user2))
+		  extra=(hash labelPath="name")
+		  as |user|}}
+		  {{user.name}}
+		{{/power-select-typeahead}}
+	</div>
+</div>
+

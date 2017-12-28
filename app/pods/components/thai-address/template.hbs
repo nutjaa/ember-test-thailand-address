@@ -7,8 +7,8 @@
       oninput=(action "skipShortSearches")
       onchange=(action (mut address))
       extra=(hash labelPath="district")
-      as |item|}}
-      {{item.district}} » {{item.amphoe}} » {{item.province}} » {{item.zipcode}}
+      as |item select|}}
+      {{highlight-substr item.district select.lastSearchedText}} » {{item.amphoe}} » {{item.province}} » {{item.zipcode}}
     {{/power-select-typeahead}}
   </div>
   <div class="col-md-6">
@@ -19,8 +19,8 @@
       oninput=(action "skipShortSearches")
       onchange=(action (mut address))
       extra=(hash labelPath="amphoe")
-      as |item|}}
-      {{item.district}} » {{item.amphoe}} » {{item.province}} » {{item.zipcode}}
+      as |item select|}}
+      {{item.district}} » {{highlight-substr item.amphoe select.lastSearchedText}} » {{item.province}} » {{item.zipcode}}
     {{/power-select-typeahead}}
   </div>
 </div>
@@ -34,8 +34,8 @@
       oninput=(action "skipShortSearches")
       onchange=(action (mut address))
       extra=(hash labelPath="province")
-      as |item|}}
-      {{item.district}} » {{item.amphoe}} » {{item.province}} » {{item.zipcode}}
+      as |item select|}}
+      {{item.district}} » {{item.amphoe}} » {{highlight-substr item.province select.lastSearchedText}} » {{item.zipcode}}
     {{/power-select-typeahead}}
   </div>
   <div class="col-md-6">
@@ -46,8 +46,8 @@
       oninput=(action "skipShortSearches")
       onchange=(action (mut address))
       extra=(hash labelPath="zipcode")
-      as |item|}}
-      {{item.district}} » {{item.amphoe}} » {{item.province}} » {{item.zipcode}}
+      as |item select|}}
+      {{item.district}} » {{item.amphoe}} » {{item.province}} » {{highlight-substr item.zipcode select.lastSearchedText}}
     {{/power-select-typeahead}}
   </div>
 </div>

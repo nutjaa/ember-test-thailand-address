@@ -1,45 +1,8 @@
 import Ember from 'ember';
 const { Component, RSVP, run } = Ember;
 
-const numbers = [
-  'one',
-  'two',
-  'three',
-  'four',
-  'five',
-  'six',
-  'seven',
-  'eight',
-  'nine',
-  'ten',
-  'eleven',
-  'twelve',
-  'thirteen',
-  'fourteen',
-  'fifteen',
-  'sixteen',
-  'seventeen',
-  'eighteen',
-  'nineteen',
-  'twenty'
-];
-
-const users = [
-  { name: 'Arthur' },
-  { name: 'Sam' },
-  { name: 'Dan' },
-  { name: 'Miguel' },
-  { name: 'Svilen' },
-  { name: 'Ruslan' },
-  { name: 'Kirill' },
-  { name: 'Stuart' },
-  { name: 'Jamie' },
-  { name: 'Matteo' }
-];
 
 export default Component.extend({
-  numbers,
-  users,
 
   data: [],
 

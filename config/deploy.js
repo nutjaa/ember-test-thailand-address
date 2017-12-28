@@ -20,6 +20,16 @@ module.exports = function(deployTarget) {
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
     // configure other plugins for production deploy target here
+    ENV.rsync = {
+      type: 'rsync',
+      dest: '/var/www/example-ember-thaiaddress.nutjaa.win',
+      host: "nutjaa@47.88.227.142",
+      privateKey: "~/.ssh/nutjaa.pem",
+      ssh: true,
+      recursive: true,
+      delete: true,
+      args: ['--verbose', '-ztl']
+    }
   }
 
   // Note: if you need to build some configuration asynchronously, you can return

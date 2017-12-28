@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import fetch from 'fetch';
 const { Component, RSVP, run } = Ember;
 
 const numbers = [

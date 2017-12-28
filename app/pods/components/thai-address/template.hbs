@@ -1,54 +1,54 @@
 <div class="row">
-	<div class="col-md-6">
-		<h2>ตำบล / แขวง</h2>
-		{{#power-select-typeahead search=(action 'searchUsersAsync')
-		  selected=user2
-		  noMatchesMessage='Not found'
-		  oninput=(action "skipShortSearches")
-		  onchange=(action (mut user2))
-		  extra=(hash labelPath="name")
-		  as |user|}}
-		  {{user.name}}
-		{{/power-select-typeahead}}
-	</div>
-	<div class="col-md-6">
-		<h2>อำเภอ / เขต</h2>
-		{{#power-select-typeahead search=(action 'searchUsersAsync')
-		  selected=user2
-		  noMatchesMessage='Not found'
-		  oninput=(action "skipShortSearches")
-		  onchange=(action (mut user2))
-		  extra=(hash labelPath="name")
-		  as |user|}}
-		  {{user.name}}
-		{{/power-select-typeahead}}
-	</div>
+  <div class="col-md-6">
+    <h2>ตำบล / แขวง</h2>
+    {{#power-select-typeahead search=(action 'searchBySubDistrict')
+      selected=address
+      noMatchesMessage='Not found'
+      oninput=(action "skipShortSearches")
+      onchange=(action (mut address))
+      extra=(hash labelPath="district")
+      as |item|}}
+      {{item.district}} » {{item.amphoe}} » {{item.province}} » {{item.zipcode}}
+    {{/power-select-typeahead}}
+  </div>
+  <div class="col-md-6">
+    <h2>อำเภอ / เขต</h2>
+    {{#power-select-typeahead search=(action 'searchByDistrict')
+      selected=address
+      noMatchesMessage='Not found'
+      oninput=(action "skipShortSearches")
+      onchange=(action (mut address))
+      extra=(hash labelPath="amphoe")
+      as |item|}}
+      {{item.district}} » {{item.amphoe}} » {{item.province}} » {{item.zipcode}}
+    {{/power-select-typeahead}}
+  </div>
 </div>
 
 <div class="row">
-	<div class="col-md-6">
-		<h2>จังหวัด</h2>
-		{{#power-select-typeahead search=(action 'searchUsersAsync')
-		  selected=user2
-		  noMatchesMessage='Not found'
-		  oninput=(action "skipShortSearches")
-		  onchange=(action (mut user2))
-		  extra=(hash labelPath="name")
-		  as |user|}}
-		  {{user.name}}
-		{{/power-select-typeahead}}
-	</div>
-	<div class="col-md-6">
-		<h2>รหัสไปรษณีย์</h2>
-		{{#power-select-typeahead search=(action 'searchUsersAsync')
-		  selected=user2
-		  noMatchesMessage='Not found'
-		  oninput=(action "skipShortSearches")
-		  onchange=(action (mut user2))
-		  extra=(hash labelPath="name")
-		  as |user|}}
-		  {{user.name}}
-		{{/power-select-typeahead}}
-	</div>
+  <div class="col-md-6">
+    <h2>จังหวัด</h2>
+    {{#power-select-typeahead search=(action 'searchByProvince')
+      selected=address
+      noMatchesMessage='Not found'
+      oninput=(action "skipShortSearches")
+      onchange=(action (mut address))
+      extra=(hash labelPath="province")
+      as |item|}}
+      {{item.district}} » {{item.amphoe}} » {{item.province}} » {{item.zipcode}}
+    {{/power-select-typeahead}}
+  </div>
+  <div class="col-md-6">
+    <h2>รหัสไปรษณีย์</h2>
+    {{#power-select-typeahead search=(action 'searchByZipCode')
+      selected=address
+      noMatchesMessage='Not found'
+      oninput=(action "skipShortSearches")
+      onchange=(action (mut address))
+      extra=(hash labelPath="zipcode")
+      as |item|}}
+      {{item.district}} » {{item.amphoe}} » {{item.province}} » {{item.zipcode}}
+    {{/power-select-typeahead}}
+  </div>
 </div>
 

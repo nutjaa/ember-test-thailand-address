@@ -1,7 +1,6 @@
 import Ember from 'ember';
 const { Component, RSVP, run } = Ember;
 
-
 export default Component.extend({
 
   data: [],
@@ -21,12 +20,18 @@ export default Component.extend({
     this._super(...arguments);
     let me = this;
 
+    me.set('address.district',me.get('sub_district'));
+    me.set('address.amphoe',me.get('district'));
+    me.set('address.province',me.get('province'));
+    me.set('address.zipcode',me.get('zipcode'));
+
     Ember.$.getJSON( "https://raw.githubusercontent.com/earthchie/jquery.Thailand.js/master/jquery.Thailand.js/database/db.json", function( data ) {
       me.preprocess(data);
     });
   },
 
   subDistrictChanged: Ember.observer('address.district', function() {
+    console.log('data');
     this.set('sub_district',this.get('address.district'));
   }),
 

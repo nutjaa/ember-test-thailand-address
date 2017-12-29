@@ -1,54 +1,58 @@
 <div class="row">
   <div class="col-md-6">
     <h2>ตำบล / แขวง</h2>
-    {{#power-select-typeahead search=(action 'searchBySubDistrict')
+    {{#power-select-typeahead-with-create search=(action 'searchBySubDistrict')
       selected=address
       noMatchesMessage='Not found'
       oninput=(action "skipShortSearches")
       onchange=(action (mut address))
+      oncreate=(action 'createSubdistrict')
       extra=(hash labelPath="district")
       as |item select|}}
       {{highlight-substr item.district select.lastSearchedText}} » {{item.amphoe}} » {{item.province}} » {{item.zipcode}}
-    {{/power-select-typeahead}}
+    {{/power-select-typeahead-with-create}}
   </div>
   <div class="col-md-6">
     <h2>อำเภอ / เขต</h2>
-    {{#power-select-typeahead search=(action 'searchByDistrict')
+    {{#power-select-typeahead-with-create search=(action 'searchByDistrict')
       selected=address
       noMatchesMessage='Not found'
       oninput=(action "skipShortSearches")
       onchange=(action (mut address))
+      oncreate=(action 'createDistrict')
       extra=(hash labelPath="amphoe")
       as |item select|}}
       {{item.district}} » {{highlight-substr item.amphoe select.lastSearchedText}} » {{item.province}} » {{item.zipcode}}
-    {{/power-select-typeahead}}
+    {{/power-select-typeahead-with-create}}
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-6">
     <h2>จังหวัด</h2>
-    {{#power-select-typeahead search=(action 'searchByProvince')
+    {{#power-select-typeahead-with-create search=(action 'searchByProvince')
       selected=address
       noMatchesMessage='Not found'
       oninput=(action "skipShortSearches")
       onchange=(action (mut address))
+      oncreate=(action 'createProvince')
       extra=(hash labelPath="province")
       as |item select|}}
       {{item.district}} » {{item.amphoe}} » {{highlight-substr item.province select.lastSearchedText}} » {{item.zipcode}}
-    {{/power-select-typeahead}}
+    {{/power-select-typeahead-with-create}}
   </div>
   <div class="col-md-6">
     <h2>รหัสไปรษณีย์</h2>
-    {{#power-select-typeahead search=(action 'searchByZipCode')
+    {{#power-select-typeahead-with-create search=(action 'searchByZipCode')
       selected=address
       noMatchesMessage='Not found'
       oninput=(action "skipShortSearches")
       onchange=(action (mut address))
+      oncreate=(action 'createZipcode')
       extra=(hash labelPath="zipcode")
       as |item select|}}
       {{item.district}} » {{item.amphoe}} » {{item.province}} » {{highlight-substr item.zipcode select.lastSearchedText}}
-    {{/power-select-typeahead}}
+    {{/power-select-typeahead-with-create}}
   </div>
 </div>
 

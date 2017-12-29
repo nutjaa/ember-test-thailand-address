@@ -10,6 +10,12 @@ export default Component.extend({
   district: '',
   province: '',
   zipcode: '',
+  address: {
+    district: '',
+    amphoe: '',
+    province: '',
+    zipcode: ''
+  },
 
   init(){
     this._super(...arguments);
@@ -142,6 +148,19 @@ export default Component.extend({
 
     searchByZipCode(term){
       return this.resolveResultbyField('zipcode', term, 20);
+    },
+
+    createSubdistrict(sub_district){
+      this.set('address.district',sub_district);
+    },
+    createDistrict(district){
+      this.set('address.amphoe',district);
+    },
+    createProvince(province){
+      this.set('address.province',province);
+    },
+    createZipcode(zipcode){
+      this.set('address.zipcode',zipcode);
     }
   }
 });

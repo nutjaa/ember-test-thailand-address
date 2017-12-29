@@ -26,6 +26,22 @@ export default Component.extend({
     });
   },
 
+  subDistrictChanged: Ember.observer('address.district', function() {
+    this.set('sub_district',this.get('address.district'));
+  }),
+
+  districtChanged: Ember.observer('address.amphoe', function() {
+    this.set('district',this.get('address.amphoe'));
+  }),
+
+  provinceChanged: Ember.observer('address.province', function() {
+    this.set('province',this.get('address.province'));
+  }),
+
+  zipCodeChanged: Ember.observer('address.zipcode', function() {
+    this.set('zipcode',this.get('address.zipcode'));
+  }),
+
   preprocess(data){
     let lookup = [];
     let words = [];

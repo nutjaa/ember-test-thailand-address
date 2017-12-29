@@ -1,3 +1,21 @@
 <div class="container">
-	{{thai-address}}
+  {{thai-address sub_district=sub_district district=district province=province zipcode=zipcode}}
+
+  <hr/>
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td>Sub district</td><td>{{sub_district}}</td>
+      </tr>
+      <tr>
+        <td>District</td><td>{{district}}</td>
+      </tr>
+      <tr>
+        <td>Province</td><td>{{province}}</td>
+      </tr>
+      <tr>
+        <td>Zipcode</td><td>{{zipcode}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
